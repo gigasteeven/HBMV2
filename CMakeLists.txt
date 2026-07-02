@@ -18,8 +18,8 @@ endif()
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
-# custom-keybinds (InvokeBindEvent) — pulled by geode-sdk installer as a mod dep,
-# but we also want the headers at build time.
-CPMAddPackage("gh:geode-sdk/custom-keybinds#v1.7.0")
+# Pull custom-keybinds so we can #include <geode.custom-keybinds/include/Keybinds.hpp>.
+# The Geode installer will also fetch it as a runtime mod dep (declared in mod.json).
+CPMAddPackage("gh:geode-sdk/custom-keybinds#main")
 
-setup_geode_mod(${PROJECT_NAME} EXTERNALS geode.custom-keybinds:1.7.0)
+setup_geode_mod(${PROJECT_NAME})
