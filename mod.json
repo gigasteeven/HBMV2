@@ -1,0 +1,46 @@
+{
+    "geode": "4.0.1",
+    "gd": {
+        "win": "2.2074",
+        "mac": "2.2074",
+        "android": "2.2074"
+    },
+    "version": "v1.0.0",
+    "id": "gigasteeven.hbmv2",
+    "name": "HBM V2 - Time Rewind",
+    "developer": "gigasteeven",
+    "description": "Snapshot-based Time Rewind system for Geometry Dash. Hold the bound key (default: N) to rewind up to 5 seconds of gameplay in Normal Mode.",
+    "tags": ["gameplay", "utility"],
+    "settings": {
+        "rewind-duration": {
+            "type": "float",
+            "default": 5.0,
+            "min": 1.0,
+            "max": 15.0,
+            "name": "Rewind Buffer Depth (s)",
+            "description": "How many seconds of gameplay are kept in the ring buffer."
+        },
+        "snapshot-interval": {
+            "type": "int",
+            "default": 4,
+            "min": 1,
+            "max": 30,
+            "name": "Snapshot Interval (ticks)",
+            "description": "Physics ticks between checkpoints. Higher = smaller buffer, coarser rewind."
+        },
+        "rewind-speed": {
+            "type": "float",
+            "default": 2.0,
+            "min": 0.5,
+            "max": 10.0,
+            "name": "Rewind Speed (x)",
+            "description": "How many snapshots to consume per rendered frame while rewinding."
+        }
+    },
+    "dependencies": {
+        "geode.custom-keybinds": {
+            "version": ">=1.7.0",
+            "importance": "required"
+        }
+    }
+}
